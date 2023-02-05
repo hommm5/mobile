@@ -23,13 +23,14 @@ public class UserEntity extends BaseEntity {
     private String lastName;
 
     @Column
+    private String imageUrl;
+
+    @Column
     private boolean isActive;
 
     @ManyToMany(fetch = FetchType.EAGER)
     private List<UserRoleEntity> userRoles = new ArrayList<>();
 
-    @Column
-    private String imageUrl;
 
     @Column
     private LocalDateTime created;
