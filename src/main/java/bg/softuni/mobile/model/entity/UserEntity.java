@@ -22,20 +22,21 @@ public class UserEntity extends BaseEntity {
     @Column
     private String lastName;
 
-    @Column
+    @Column(name = "image_url")
     private String imageUrl;
 
     @Column
     private boolean isActive;
 
+    @Column(nullable = true)
     @ManyToMany(fetch = FetchType.EAGER)
     private List<UserRoleEntity> userRoles = new ArrayList<>();
 
 
-    @Column
+    @Column(nullable = true)
     private LocalDateTime created;
 
-    @Column
+    @Column(nullable = true)
     private LocalDateTime modified;
 
     public UserEntity() {
