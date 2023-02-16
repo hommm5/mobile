@@ -2,7 +2,9 @@ package bg.softuni.mobile.web;
 import bg.softuni.mobile.model.dto.UserLoginDTO;
 import bg.softuni.mobile.model.dto.UserRegisterDTO;
 import bg.softuni.mobile.service.UserService;
+import jakarta.validation.Valid;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -33,16 +35,5 @@ public class UserController {
         System.out.println("User is logged:" + userService.login(userLoginDTO));
         return "redirect:/";
     }
-    @GetMapping("/register")
-    public String register(){
-        return "auth-register";
-    }
 
-    @PostMapping("/register")
-    public String register(UserRegisterDTO userRegisterDTO){
-
-        userService.registerAndLogin(userRegisterDTO);
-
-        return "redirect:/";
-    }
 }
