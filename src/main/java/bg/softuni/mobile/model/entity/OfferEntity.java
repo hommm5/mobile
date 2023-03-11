@@ -1,12 +1,11 @@
 package bg.softuni.mobile.model.entity;
 
-import bg.softuni.mobile.model.entity.enums.EngineEnum;
-import bg.softuni.mobile.model.entity.enums.TransmissionEnum;
+import bg.softuni.mobile.model.enums.EngineEnum;
+import bg.softuni.mobile.model.enums.TransmissionEnum;
 import jakarta.persistence.*;
 import org.hibernate.annotations.GenericGenerator;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
-import java.time.Year;
 import java.util.UUID;
 
 @Entity

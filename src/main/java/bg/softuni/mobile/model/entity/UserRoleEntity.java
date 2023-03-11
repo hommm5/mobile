@@ -1,5 +1,5 @@
 package bg.softuni.mobile.model.entity;
-import bg.softuni.mobile.model.entity.enums.UserRoleEnum;
+import bg.softuni.mobile.model.enums.UserRoleEnum;
 import jakarta.persistence.*;
 
 @Entity

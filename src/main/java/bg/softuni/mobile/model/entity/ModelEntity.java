@@ -1,7 +1,7 @@
 package bg.softuni.mobile.model.entity;
 
 
-import bg.softuni.mobile.model.entity.enums.CategoryEnum;
+import bg.softuni.mobile.model.enums.CategoryEnum;
 import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
