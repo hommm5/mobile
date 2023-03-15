@@ -2,7 +2,9 @@ package bg.softuni.mobile.model.entity;
 
 
 import bg.softuni.mobile.model.enums.CategoryEnum;
+import jakarta.annotation.Nullable;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
 
 import java.time.LocalDateTime;
 
@@ -10,6 +12,7 @@ import java.time.LocalDateTime;
 @Table(name = "models")
 public class ModelEntity extends BaseEntity {
 
+    @NotNull
     @Column(nullable = false)
     private String name;
 
@@ -17,19 +20,22 @@ public class ModelEntity extends BaseEntity {
     @Enumerated(value = EnumType.STRING)
     private CategoryEnum category;
 
-    @Column(nullable = false)
+    @NotNull
+    @Column(name = "image_url", nullable = false)
     private String imageUrl;
 
-    @Column
+    @NotNull
+    @Column(name = "start_year")
     private int startYear;
 
-    @Column
+    @Nullable
+    @Column(name = "end_year")
     private Long endYear;
 
-    @Column
+    @Column()
     private LocalDateTime created;
 
-    @Column
+    @Column()
     private LocalDateTime modified;
 
     @ManyToOne
@@ -120,7 +126,7 @@ public class ModelEntity extends BaseEntity {
                 ", endYear=" + endYear +
                 ", created=" + created +
                 ", modified=" + modified +
-                ", brand=" + (brand != null ? brand.getName() : null)+
+                ", brand=" + (brand != null ? brand.getName() : null) +
                 '}';
     }
 }
